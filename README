@@ -1,0 +1,10 @@
+Fix Google Bookmarks Tag with commas
+------------------------------------
+
+Some import from Firefox into Google Bookmarks caused my bookmark's tags to be corrupted. Instead of splitting on the commas, it considered it a single tag (with spaces in it). So instead of having 40-50 tags, I had 500.  There is no Google Bookmark API. I tried to orchstrate the Google login process in Scala and HttpClient, but having issues. By implementing as an extension, you'll be in an environment with all the right cookies and permissions.  It turned out to be pretty simple to implement in the end. The steps taken are:
+
+* Use XPath to identify the labels on https://www.google.com/bookmarks/l
+* Establish the special Bookmarks token
+* Walk through each tag
+* Grab the bookmarks for each tag
+* Update each bookmark after splitting the tag

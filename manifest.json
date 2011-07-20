@@ -1,0 +1,19 @@
+{
+  "name": "Fix Bookmark Tags",
+  "version": "1.0",
+  "description": "Parse and update Google Bookmarks",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "https://www.google.com/bookmarks/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/bookmarks/l"],
+      "css" : ["Comma.css"],
+      "js" : ["contentscript.js"],
+      "run_at" : "document_idle"
+    } 
+  ]
+}
